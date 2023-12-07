@@ -101,9 +101,18 @@ with cnx:
     # except DatabaseError as error:
     #     print(error)
 
+    # try:
+    #     cursor.execute(query_select)
+    #     print('Table user')
+    #     print(cursor.fetchall())
+    # except DatabaseError as error:
+    #     print(error)
+
     try:
         cursor.execute(query_select)
-        print('Table user')
-        print(cursor.fetchall())
+
+        rows = cursor.fetchall()
+        for row in rows:
+            print(row)
     except DatabaseError as error:
         print(error)
